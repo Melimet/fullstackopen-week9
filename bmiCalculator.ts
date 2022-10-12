@@ -1,6 +1,4 @@
-import {parseArguments} from "./multiplier"
-
-
+import {parseArguments} from "./parseArguments"
 
 function calculateBmi(height: number, weight: number):string {
 
