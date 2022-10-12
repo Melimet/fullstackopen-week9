@@ -1,9 +1,22 @@
 import express from "express"
+import { calculateBmi } from "./bmiCalculator"
 
 const app = express()
 
-app.get("/hello", (_req, res) => {
+app.get("/hello", (_req, res): void => {
   res.send("Hello world!!!!!")
+})
+
+app.get("/bmi", (req, res):void => {
+    const height = req.query.height
+    const weight = req.query.weight
+
+    if (!weight || !height){
+      res.status(400).send(JSON.stringify({"error": "malformed parameters"}))
+    }
+
+    const response = {height, weight, bmi: calculateBmi(Number(height), Number(weight))}
+    res.send(JSON.stringify(response))
 })
 
 const PORT = 3003
