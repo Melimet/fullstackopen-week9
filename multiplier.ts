@@ -3,7 +3,7 @@ interface MultiplyValues {
   value2: number;
 }
 
-const parseArguments = (args: Array<string>): MultiplyValues => {
+const parseArguments  = (args: Array<string>): MultiplyValues => {
   if (args.length < 4) throw new Error('Not enough arguments');
   if (args.length > 4) throw new Error('Too many arguments');
 
@@ -23,7 +23,7 @@ const multiplicator = (a: number, b: number, printText: string) => {
 
 try {
   const { value1, value2 } = parseArguments(process.argv);
-  multiplicator(value1, value2, `Multiplied ${value1} and ${value2}, the result is:`);
+  //multiplicator(value1, value2, `Multiplied ${value1} and ${value2}, the result is:`);
 } catch (error: unknown) {
   let errorMessage = 'Something bad happened.'
   if (error instanceof Error) {
@@ -31,3 +31,5 @@ try {
   }
   console.log(errorMessage);
 }
+
+export {parseArguments}
