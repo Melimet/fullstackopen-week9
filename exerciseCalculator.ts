@@ -37,7 +37,7 @@ function calculateExercises(trainingDays: number[], target: number):Result{
 
   return { periodLength: trainingDays.length,
   trainingDays: trainingDays.filter(a => (a != 0)).length,
-  success: avgHours >target,
+  success: avgHours > target,
   rating,
   ratingDescription: ratingFeedback(rating),
   target,
@@ -52,3 +52,5 @@ try {
 } catch(error: unknown){
   console.log(`error: ${error instanceof Error ? error.message : "unknown"}`)
 }
+
+export { calculateExercises } 

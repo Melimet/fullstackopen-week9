@@ -1,5 +1,6 @@
 import express from "express"
 import { calculateBmi } from "./bmiCalculator"
+import { calculateExercises } from "./exerciseCalculator"
 
 const app = express()
 
@@ -18,6 +19,11 @@ app.get("/bmi", (req, res):void => {
     const response = {height, weight, bmi: calculateBmi(Number(height), Number(weight))}
     res.send(JSON.stringify(response))
 })
+
+app.get("/exercise", (req, res):void => {
+  
+})
+
 
 const PORT = 3003
 
