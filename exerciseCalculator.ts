@@ -32,7 +32,7 @@ function ratingFeedback(grade: number):string{
 }
 
 function calculateExercises(trainingDays: number[], target: number):Result{
-  const avgHours = trainingDays.reduce((sum, hours) => (sum + hours),0);
+  const avgHours = trainingDays.reduce((sum, hours) => (sum + hours),0) / trainingDays.length;
   const rating = ratingGrading(avgHours, target);
 
   return { periodLength: trainingDays.length,
