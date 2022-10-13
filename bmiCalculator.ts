@@ -2,13 +2,13 @@
 
 function calculateBmi(height: number, weight: number):string {
 
-  const bmi = +(weight / (height ** 2) * 10000).toFixed(2)
+  const bmi = +(weight / (height ** 2) * 10000).toFixed(2);
   if (bmi < 18.5){
-    return `bmi of ${bmi}, underweight`
+    return `bmi of ${bmi}, underweight`;
   } else if (bmi >= 25){
-    return `bmi of ${bmi}, overweight`
+    return `bmi of ${bmi}, overweight`;
   }
-  return `bmi of ${bmi}, healthy weight` 
+  return `bmi of ${bmi}, healthy weight`; 
 
 }
 /** 
@@ -22,4 +22,4 @@ function validateAndCalculateBmi() {
 }
 
 */
-export { calculateBmi }
+export { calculateBmi };

@@ -13,11 +13,11 @@ const parseArguments  = (args: string[] ): MultiplyValues => {
     return {
       value1: Number(args[2]),
       value2: Number(args[3])
-    }
+    };
   } else {
     throw new Error('Provided values were not numbers!');
   }
-}
+};
 
 
-export { parseArguments }
+export { parseArguments };
