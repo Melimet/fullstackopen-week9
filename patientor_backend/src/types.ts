@@ -1,8 +1,8 @@
-/**enum Gender { 
+enum Gender { 
   Male = "male",
   Female =  "female",
   Other = "other"
-}*/
+}
 
 interface Diagnose {
   code: string
@@ -15,10 +15,11 @@ interface Patient {
   name: string
   dateOfBirth: string
   ssn: string
-  gender: string
+  gender: Gender
   occupation: string
 }
 
-type PatientWithoutSsn = Omit<Patient, 'ssn'>
+type PatientWithoutSsn = Omit<Patient, 'ssn'>;
+type NewPatient = Omit<Patient, 'id'>;
 
-export { Diagnose, Patient, PatientWithoutSsn }
+export { Diagnose, Patient, PatientWithoutSsn, NewPatient, Gender};
