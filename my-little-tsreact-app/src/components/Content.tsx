@@ -1,10 +1,14 @@
-import { Course } from '../types'
+import { CoursePart } from '../types'
+import { Part } from './Part'
 
-function Content({ courses }: { courses: Course[]}):JSX.Element{
+function Content({ courses }: { courses: CoursePart[]}):JSX.Element{
   return (
     <ul>
-      { courses.map((course) => 
-      <li key={course.name}> {course.name} exercises:{course.exerciseCount}</li>)}
+      { courses.map((coursePart: CoursePart) => 
+      <div key={coursePart.name}>
+       <Part coursePart = {coursePart}/>
+       </div>
+       )}
     </ul>
   )
 }
