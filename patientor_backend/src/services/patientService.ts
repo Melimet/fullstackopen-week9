@@ -16,4 +16,8 @@ const addPatient = (newPatient: NewPatient): Patient => {
   return newPatientEntry;
 };
 
-export { getPatients, addPatient };
+function getPatient(patientId: string):Patient | undefined {
+  return patientData.find((patient) => patient.id === patientId)
+}
+
+export { getPatients, addPatient, getPatient };

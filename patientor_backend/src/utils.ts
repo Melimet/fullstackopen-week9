@@ -24,13 +24,15 @@ function parseGender(gender: unknown): Gender{
 }
 
 type PatientFields = { name: unknown, dateOfBirth: unknown, ssn: unknown, gender: unknown, occupation: unknown }
-function toNewPatientEntry({ name, dateOfBirth, ssn, gender, occupation } : PatientFields): NewPatient{
+
+function toNewPatientEntry({ name, dateOfBirth, ssn, gender, occupation }: PatientFields): NewPatient{
   const newPatient: NewPatient = {
     name: parseText(name),
     dateOfBirth: parseText(dateOfBirth),
     ssn: parseText(ssn),
     gender: parseGender(gender),
-    occupation: parseText(occupation)
+    occupation: parseText(occupation),
+    entries: []
     }
 
   return newPatient

@@ -1,5 +1,5 @@
 import express from "express";
-import { getPatients, addPatient } from "../services/patientService";
+import { getPatients, addPatient, getPatient } from "../services/patientService";
 import { toNewPatientEntry } from "../utils";
 
 const patientRouter = express.Router();
@@ -22,5 +22,10 @@ patientRouter.post('/', (req, res) => {
     res.status(400).send(errorMessage);
   }
 });
+
+patientRouter.get(`/:id`, (req, res) => {
+  const id = req.params.id
+  res.send(getPatient(id))
+})
 
 export { patientRouter };

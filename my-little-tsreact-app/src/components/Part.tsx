@@ -32,7 +32,7 @@ function Part({ coursePart }: {coursePart: CoursePart}){
       return (
         <li>
           <h3>{coursePart.name}, exercises {coursePart.exerciseCount}</h3>
-          <i>{coursePart.description}</i><br></br>
+          <i>{coursePart.description}</i>
           <p>required skills: {coursePart.requirements.join(", ")}</p>
 
         </li>
