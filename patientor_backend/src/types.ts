@@ -63,9 +63,9 @@ interface BaseEntry {
   diagnosisCodes?: Array<Diagnose['code']>;
 }
 
-type PatientWithoutSsn = Omit<Patient, 'ssn' | 'entries'>;
+type PatientWithoutSsn = Omit<Patient, 'ssn'>;
 type NewPatient = Omit<Patient, 'id' >;
 
-export { Diagnose, Patient, PatientWithoutSsn, NewPatient, Gender, Entry, HealthCheckEntry};
+export { Diagnose, Patient, PatientWithoutSsn, NewPatient, Gender, Entry};
 
 
