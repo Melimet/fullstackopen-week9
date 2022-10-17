@@ -34,7 +34,7 @@ patientRouter.post(`/:id/entries`, (req, res) => {
   const patientId = req.params.id
   const newEntry = toNewEntry(req.body)
   const addedNewEntry = addEntryToPatient(newEntry, patientId)
-  res.send(addedNewEntry)
+  res.json(addedNewEntry)
   
   } catch (error: unknown){
     let errorMessage = "Something went wrong"

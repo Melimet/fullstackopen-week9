@@ -48,7 +48,7 @@ function isHealthCheckRating(healthCheckRating: any): healthCheckRating is Healt
 }
 
 function parseHealthCheckRating(healthCheckRating: unknown): HealthCheckRating {
-  if (!healthCheckRating || !isHealthCheckRating(healthCheckRating)) throw new Error("HealthCheckRating missing or invalid!")
+  if (!isHealthCheckRating(healthCheckRating)) throw new Error("HealthCheckRating missing or invalid!")
   return healthCheckRating
 }
 
@@ -91,7 +91,7 @@ function toNewEntry( entryFields: EntryFields ): Entry{
       return { 
         type,
         ...newEntryBase,
-        healthCheckRating: parseHealthCheckRating(entryFields.healthCheckRating)  
+        healthCheckRating: parseHealthCheckRating(Number(entryFields.healthCheckRating))  
     } 
     case 'Hospital':
       return {
