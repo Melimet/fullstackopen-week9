@@ -33,7 +33,7 @@ interface OccupationalHealthcareEntry extends BaseEntry {
 
 interface HospitalEntry extends BaseEntry {
   type: 'Hospital'
-  discharge: {
+  discharge?: {
     date: string
     criteria: string
   }
@@ -66,6 +66,6 @@ interface BaseEntry {
 type PatientWithoutSsn = Omit<Patient, 'ssn'>;
 type NewPatient = Omit<Patient, 'id' >;
 
-export { Diagnose, Patient, PatientWithoutSsn, NewPatient, Gender, Entry};
+export { Diagnose, Patient, PatientWithoutSsn, NewPatient, Gender, Entry, HealthCheckRating, BaseEntry};
 
 
