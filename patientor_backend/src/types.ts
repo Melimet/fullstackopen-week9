@@ -1,8 +1,7 @@
 enum Gender { 
   Male = "male",
   Female =  "female",
-  Other = "other"
-}
+  Other = "other"}
 
 enum HealthCheckRating {
   "Healthy" = 0,

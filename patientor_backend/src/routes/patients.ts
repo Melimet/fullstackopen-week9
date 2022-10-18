@@ -30,10 +30,11 @@ patientRouter.get(`/:id`, (req, res) => {
 
 patientRouter.post(`/:id/entries`, (req, res) => {
   try{
-  
+
   const patientId = req.params.id
   const newEntry = toNewEntry(req.body)
   const addedNewEntry = addEntryToPatient(newEntry, patientId)
+  console.log("success!")
   res.json(addedNewEntry)
   
   } catch (error: unknown){

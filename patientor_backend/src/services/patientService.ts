@@ -22,11 +22,17 @@ function getPatient(patientId: string):Patient | undefined {
 }
 
 function addEntryToPatient(entry: Entry, patientId: string): Entry | undefined{
+  
+  console.log("patientId " + patientId)
   const newEntry = toNewEntry(entry)
-  const patient = data.find((person) => person.id === patientId )
-  if (!patient) return undefined
-
+  
+  const patient = getPatient(patientId)
+  if (!patient) {
+    console.log("unluigi")
+    return undefined
+  }
   patient.entries.push(newEntry)
+  console.log(patient)
   return entry
 }
 
